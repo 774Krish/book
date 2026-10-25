@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BooksOnline">
+  <rect width="64" height="64" rx="16" fill="#b4451d" />
+  <g
+    fill="none"
+    stroke="#fff7f0"
+    stroke-width="3.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M13 17.5A3.5 3.5 0 0 1 16.5 14H29v36H16.5A3.5 3.5 0 0 1 13 46.5z" />
+    <path d="M51 17.5A3.5 3.5 0 0 0 47.5 14H35v36h12.5A3.5 3.5 0 0 0 51 46.5z" />
+  </g>
+</svg>
