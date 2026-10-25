@@ -2,12 +2,17 @@ import { useState } from 'react'
 import { bestsellerLists } from '../data/bestsellers'
 import { sites, storeSearchUrl } from '../data/sites'
 
+const BASE_URL = import.meta.env.BASE_URL
+
 // -L is the large size (~500px wide), sharp enough for the card at any
 // device pixel ratio without shipping the original scan. A locally bundled
 // `cover` path wins over both. Books with no usable image get a typographic
 // placeholder rather than a broken image.
 function coverUrl(book) {
-  if (book.cover) return book.cover
+  // `cover` paths are written as if served from the site root
+  // ('/covers/one.jpg'), so the build's base path goes in front of them.
+  // Without this the images 404 on a GitHub Pages project site.
+  if (book.cover) return `${BASE_URL}${book.cover.replace(/^\//, '')}`
   if (book.coverId) {
     return `https://covers.openlibrary.org/b/id/${book.coverId}-L.jpg`
   }
